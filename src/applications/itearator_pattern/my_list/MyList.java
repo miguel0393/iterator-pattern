@@ -1,12 +1,14 @@
 package applications.itearator_pattern.my_list;
 
-import applications.itearator_pattern.MyIterator;
+import applications.itearator_pattern.MyCollection;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 import static java.util.Objects.isNull;
 
-public class MyList<T> implements MyIterator<T> {
+public class MyList<T> implements MyCollection<T> {
 
     private MyElement<T> first;
     private MyElement<T> last;

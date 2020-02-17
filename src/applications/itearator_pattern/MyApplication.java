@@ -2,10 +2,10 @@ package applications.itearator_pattern;
 
 public class MyApplication<T1, T2> {
 
-    private final MyIterator<T1> myArray;
-    private final MyIterator<T2> myList;
+    private final MyCollection<T1> myArray;
+    private final MyCollection<T2> myList;
 
-    public MyApplication(MyIterator<T1> myArray, MyIterator<T2> myList) {
+    public MyApplication(MyCollection<T1> myArray, MyCollection<T2> myList) {
         this.myArray = myArray;
         this.myList = myList;
     }
@@ -18,7 +18,7 @@ public class MyApplication<T1, T2> {
         print(this.myList);
     }
 
-    private <T> void print(MyIterator<T> iterable) {
+    private <T> void print(MyCollection<T> iterable) {
         iterable.forEach(System.out::println);
     }
 }

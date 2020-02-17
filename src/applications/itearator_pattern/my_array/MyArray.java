@@ -1,10 +1,10 @@
 package applications.itearator_pattern.my_array;
 
-import applications.itearator_pattern.MyIterator;
+import applications.itearator_pattern.MyCollection;
 
 import java.util.Iterator;
 
-public class MyArray<T> implements MyIterator<T> {
+public class MyArray<T> implements MyCollection<T> {
 
     private final T[] elements;
     private int cursor;
