@@ -12,12 +12,12 @@ public class MyList<T> implements MyIterator<T> {
     private MyElement<T> last;
     private int size;
 
-    public MyList(T... values) {
+    @SafeVarargs
+    public MyList(final T... values) {
         this.size = -1;
         addAll(values);
     }
 
-    @SafeVarargs
     private void addAll(T... values) {
         for (T value : values) {
             final MyElement<T> newElement = new MyElement<>();
@@ -36,7 +36,7 @@ public class MyList<T> implements MyIterator<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<>() {
+        return new Iterator<T>() {
 
             private MyElement<T> current;
             private int index = -1;
@@ -52,11 +52,11 @@ public class MyList<T> implements MyIterator<T> {
 
                 if (isNull(this.current)) {
                     next = MyList.this.first;
-                    this.current = next;
                 } else {
                     next = this.current.getNext();
                 }
 
+                this.current = next;
                 this.index++;
                 return next.getValue();
             }
