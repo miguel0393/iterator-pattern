@@ -1,9 +1,10 @@
-package applications.itearator_pattern.ejemplo2;
+package applications.itearator_pattern.my_list;
 
 public class MyElement<T> {
 
     private T value;
     private MyElement<T> next;
+
 
     public T getValue() {
         return value;
